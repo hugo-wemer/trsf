@@ -18,8 +18,8 @@ def measurements():
 
         sleep(1)
 
-        # print("Ambient Temperature:", ambientTemp, "°C")
-#         print("Target Temperature:", targetTemp,"°C")
+        print("Ambient Temperature:", ambientTemp, "°C")
+        print("Target Temperature:", targetTemp,"°C")
       
         mx30.read_sensor()
         mx30.ir, mx30.red
@@ -27,11 +27,11 @@ def measurements():
         hb = int(mx30.ir / 100)
         spo2 = int(mx30.red / 100)
         
-#         if mx30.ir != mx30.buffer_ir :
-#             print("heart Rate:",hb);
+        if mx30.ir != mx30.buffer_ir :
+            print("heart Rate:",hb);
         if mx30.red != mx30.buffer_red:
             print("Blood Oxygen:",spo2);
-#             print("-----------------------")
+            print("-----------------------")
 
 import RPi.GPIO as GPIO
 #GPIO.setmode (GPIO.BOARD)
