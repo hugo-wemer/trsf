@@ -108,7 +108,7 @@ def measurements():
             #print("Ambient Temperature:", ambientTemp, "°C")
             #print("Target Temperature:", targetTemp,"°C")
             if (float(targetTemp) > int(30)):
-                temperature = 35,5 + (targetTemp/100)*2
+                temperature = 35.5 + (targetTemp/100)*2
                 tempTrigger = False
             else:
                 tempTrigger = True
