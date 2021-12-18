@@ -50,7 +50,7 @@ def sayname():
     write("name.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-     #wv.write("recording1.wav", recording, freq, sampwidth=2)
+    wv.write("/rec/name.wav", recording, freq, sampwidth=2)
 
 def sayfever():
     count()
@@ -61,7 +61,7 @@ def sayfever():
     write("fever.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    #wv.write("recording1.wav", recording, freq, sampwidth=2)
+    wv.write("fever.wav", recording, freq, sampwidth=2)
 
 def sayheadache():
     count()
@@ -72,7 +72,7 @@ def sayheadache():
     write("headache.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    #wv.write("recording1.wav", recording, freq, sampwidth=2)
+    wv.write("headache.wav", recording, freq, sampwidth=2)
 
 def sayrednose():
     count()
@@ -83,7 +83,7 @@ def sayrednose():
     write("rednose.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    #wv.write("recording1.wav", recording, freq, sampwidth=2)
+    wv.write("rednose.wav", recording, freq, sampwidth=2)
 
 
 
@@ -210,4 +210,5 @@ if GPIO.input(bot) == 0:
     print('Temperatura = ', temperature)
     print('Batimentos = ', bpm)
     print('Oxigenação = ', oxy)
-      
+
+import os    
