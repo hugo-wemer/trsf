@@ -40,7 +40,7 @@ from scipy.io.wavfile import write
 import wavio as wv
 freq = 48000
 duration = 5
-    
+import os
 def sayname():
     count()
     print('DIGA O SEU NOME')
