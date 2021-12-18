@@ -108,7 +108,7 @@ def measurements():
             #print("Ambient Temperature:", ambientTemp, "°C")
             #print("Target Temperature:", targetTemp,"°C")
             if (float(targetTemp) > int(30)):
-                temperature = 35.5 + (targetTemp/100)*2
+                temperature = 35.5 + (float(targetTemp)/100)*2
                 tempTrigger = False
             else:
                 tempTrigger = True
@@ -122,7 +122,7 @@ def measurements():
             if mx30.ir != mx30.buffer_ir :
                 #print("heart Rate:",hb);
                 if (int(hb) > int(75)):
-                    bpm = hb
+                    bpm = int(hb)
                     bpmTrigger = False
                 else:
                     bpmTrigger = True
@@ -130,7 +130,7 @@ def measurements():
                 #print("Blood Oxygen:",spo2);
                 #print("-----------------------")
                 if (int(spo2) > int(80)):
-                    oxy = 95 + ((spo2/100) * 2)
+                    oxy = 95 + ((int(spo2)/100) * 2)
                     oxyTrigger = False
                     mea = False
                 else:
