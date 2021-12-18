@@ -38,7 +38,7 @@ def count():
 import sounddevice as sd
 from scipy.io.wavfile import write
 import wavio as wv
-freq = 44100
+freq = 48000
 duration = 5
 import os
 def sayname():
@@ -205,13 +205,13 @@ if GPIO.input(bot) == 0:
     sayname()
     print('Após a contagem, responda a pergunta: VOCÊ TEVE FEBRE?')
     sleep(2)
-    sayfever()
+    #sayfever()
     print('Após a contagem, responda a pergunta: VOCÊ TEVE DOR DE CABEÇA?')
     sleep(2)
-    sayheadache()
+    #sayheadache()
     print('Após a contagem, responda a pergunta: VOCÊ TEVE CORIZA?')
     sleep(2)
-    sayrednose()
+    #sayrednose()
     print("Posicione os dedos indicadores nos dois sensores do totem.")
     sleep(2)
     measurements()

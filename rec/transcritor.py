@@ -16,7 +16,7 @@ chars_to_ignore_regex = '[\,\?\.\!\-\;\:\"]'  # noqa: W605
 model = Wav2Vec2ForCTC.from_pretrained(model_name).to()
 processor = Wav2Vec2Processor.from_pretrained(model_name)
 
-resampler = torchaudio.transforms.Resample(orig_freq=48_000, new_freq=16_000)
+resampler = torchaudio.transforms.Resample(orig_freq=48000, new_freq=16_000)
 
 #load the corpus
 #ds = load_dataset("common_voice", "pt", split="test", data_dir="./cv-corpus-6.1-2020-12-11")
