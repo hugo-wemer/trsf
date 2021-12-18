@@ -115,7 +115,7 @@ def measurements():
                 tempTrigger = False
             else:
                 tempTrigger = True
-        while(bpmTrigger and oxyTrigger):
+        while(bpmTrigger):
             mx30.read_sensor()
             mx30.ir, mx30.red
             hb = int(mx30.ir / 100)
@@ -208,6 +208,6 @@ if GPIO.input(bot) == 0:
     sleep(2)
     measurements()
     print('Temperatura = ', temperature)
-    #print('Batimentos = ', bpm)
-    #print('Oxigenação = ', oxy)
+    print('Batimentos = ', bpm)
+    print('Oxigenação = ', oxy)
       
