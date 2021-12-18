@@ -99,6 +99,8 @@ def measurements():
     mx30.enable_spo2()
     mea = True
     tempTrigger = True
+    bpmTrigger = True
+    oxyTrigger = True
     while(mea):
         i2c = io.I2C(board.SCL, board.SDA, frequency=100000)
         mlx = adafruit_mlx90614.MLX90614(i2c)
@@ -112,7 +114,7 @@ def measurements():
                 tempTrigger = False
             else:
                 tempTrigger = True
-        while(bpmTrigger & bpmTrigger):
+        while(bpmTrigger & oxyTrigger):
             mx30.read_sensor()
             mx30.ir, mx30.red
 
