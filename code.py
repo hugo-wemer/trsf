@@ -47,7 +47,7 @@ def sayname():
     recording = sd.rec(int(duration * freq), 
                     samplerate=freq, channels=1)
     sd.wait()
-    write("name.wav", freq, recording)
+    write("/rec/name.wav", freq, recording)
 
     # Convert the NumPy array to audio file
     wv.write("/rec/name.wav", recording, freq, sampwidth=2)
