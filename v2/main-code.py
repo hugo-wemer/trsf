@@ -179,20 +179,20 @@ while(1):
         print('Oxigenação = ', oxy)
         
         from pydub import AudioSegment
-        sound = AudioSegment.from_wav("name0.wav")
+        sound = AudioSegment.from_wav("/home/ubuntu/trsf/v2/rec/name0.wav")
         sound = sound.set_channels(2)
-        sound.export("name0.wav", format="wav")
+        sound.export("/home/ubuntu/trsf/v2/rec/name0.wav", format="wav")
 
-        sound = AudioSegment.from_wav("fever0.wav")
+        sound = AudioSegment.from_wav("/home/ubuntu/trsf/v2/rec/fever0.wav")
         sound = sound.set_channels(2)
-        sound.export("fever0.wav", format="wav")
+        sound.export("/home/ubuntu/trsf/v2/rec/fever0.wav", format="wav")
 
-        sound = AudioSegment.from_wav("headache0.wav")
+        sound = AudioSegment.from_wav("/home/ubuntu/trsf/v2/rec/headache0.wav")
         sound = sound.set_channels(2)
-        sound.export("headache0.wav", format="wav")
+        sound.export("/home/ubuntu/trsf/v2/rec/headache0.wav", format="wav")
 
-        sound = AudioSegment.from_wav("rednose0.wav")
+        sound = AudioSegment.from_wav("/home/ubuntu/trsf/v2/rec/rednose0.wav")
         sound = sound.set_channels(2)
-        sound.export("rednose0.wav", format="wav")
+        sound.export("/home/ubuntu/trsf/v2/rec/rednose0.wav", format="wav")
 
 
