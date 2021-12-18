@@ -34,17 +34,20 @@ def measurements():
             print("-----------------------")
 
 import RPi.GPIO as GPIO
-#GPIO.setmode (GPIO.BOARD)
+import time
+from time import sleep
 GPIO.setmode (GPIO.BCM)
-#bot = 15
 bot = 22
+
 GPIO.setup (bot,GPIO.IN)
 
 print("Seja bem-vindo à triagem")
 print("Pressione o botão para iniciar")
 
 while(1):
-  
-    if GPIO.input(bot) ==1:
-        
-      measurements()
+    if GPIO.input(bot) == 1:     
+        sleep(1)
+        if GPIO.input(bot) == 0:
+             measurements()
+    
+      
