@@ -98,6 +98,7 @@ def measurements():
     mx30 = max30100.MAX30100()
     mx30.enable_spo2()
     mea = True
+    tempTrigger = True
     while(mea):
         i2c = io.I2C(board.SCL, board.SDA, frequency=100000)
         mlx = adafruit_mlx90614.MLX90614(i2c)
@@ -150,14 +151,19 @@ while(1):
         sleep(1)
         if GPIO.input(bot) == 0:
             print('Após a contagem, diga o seu nome')
+            sleep(2)
             sayname()
             print('Após a contagem, responda a pergunta: VOCÊ TEVE FEBRE?')
+            sleep(2)
             sayfever()
             print('Após a contagem, responda a pergunta: VOCÊ TEVE DOR DE CABEÇA?')
+            sleep(2)
             sayheadache()
             print('Após a contagem, responda a pergunta: VOCÊ TEVE CORIZA?')
+            sleep(2)
             sayrednose()
             print("Posicione os dedos indicadores nos dois sensores do totem.")
+            sleep(2)
             measurements()
             print('Temperatura = ',temperature, "°C")
             print('Batimentos = ',bpm, "bpm")
