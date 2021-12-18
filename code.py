@@ -208,7 +208,7 @@ if GPIO.input(bot) == 0:
     print("Posicione os dedos indicadores nos dois sensores do totem.")
     sleep(2)
     measurements()
-    print('Temperatura = ',temperature)
-    print('Batimentos = ',bpm)
-    print('Oxigenação = ',oxy)
+    print('Temperatura = ', temperature)
+    print('Batimentos = ', bpm)
+    print('Oxigenação = ', oxy)
       
