@@ -210,5 +210,5 @@ if GPIO.input(bot) == 0:
     measurements()
     print('Temperatura = ',temperature, '°C')
     print('Batimentos = ',bpm, 'bpm')
-    print('Oxigenação = ',oxy, '%)'
+    print('Oxigenação = ',oxy, '%')
       
