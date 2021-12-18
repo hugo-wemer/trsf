@@ -47,10 +47,12 @@ def sayname():
     recording = sd.rec(int(duration * freq), 
                     samplerate=freq, channels=1)
     sd.wait()
-    write("name.wav", freq, recording)
+    write("name0.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    wv.write("name.wav", recording, freq, sampwidth=2)
+    wv.write("name1.wav", recording, freq, sampwidth=2)
+    os.replace("name0.wav", "rec/name0.wav")
+    os.replace("name1.wav", "rec/name1.wav")
 
 def sayfever():
     count()
@@ -58,10 +60,12 @@ def sayfever():
     recording = sd.rec(int(duration * freq), 
                         samplerate=freq, channels=1)
     sd.wait()
-    write("fever.wav", freq, recording)
+    write("fever0.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    wv.write("fever.wav", recording, freq, sampwidth=2)
+    wv.write("fever1.wav", recording, freq, sampwidth=2)
+    os.replace("fever0.wav", "rec/fever0.wav")
+    os.replace("fever1.wav", "rec/fever1.wav")
 
 def sayheadache():
     count()
@@ -69,10 +73,12 @@ def sayheadache():
     recording = sd.rec(int(duration * freq), 
                         samplerate=freq, channels=1)
     sd.wait()
-    write("headache.wav", freq, recording)
+    write("headache0.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    wv.write("headache.wav", recording, freq, sampwidth=2)
+    wv.write("headache1.wav", recording, freq, sampwidth=2)
+    os.replace("headache0.wav", "rec/headache0.wav")
+    os.replace("headache1.wav", "rec/headache1.wav")
 
 def sayrednose():
     count()
@@ -80,10 +86,12 @@ def sayrednose():
     recording = sd.rec(int(duration * freq), 
                         samplerate=freq, channels=1)
     sd.wait()
-    write("rednose.wav", freq, recording)
+    write("rednose0.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    wv.write("rednose.wav", recording, freq, sampwidth=2)
+    wv.write("rednose1.wav", recording, freq, sampwidth=2)
+    os.replace("rednose0.wav", "rec/rednose0.wav")
+    os.replace("rednose1.wav", "rec/rednose1.wav")
 
 
 
@@ -210,9 +218,3 @@ if GPIO.input(bot) == 0:
     print('Temperatura = ', temperature)
     print('Batimentos = ', bpm)
     print('Oxigenação = ', oxy)
-
-import os    
-os.replace("name.wav", "rec/name.wav")
-os.replace("fever.wav", "rec/fever.wav")
-os.replace("headache.wav", "rec/headache.wav")
-os.replace("rednose.wav", "rec/rednose.wav")
