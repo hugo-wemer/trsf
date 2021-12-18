@@ -164,7 +164,7 @@ while(1):
         sayname()
         print('Após a contagem, responda a pergunta: VOCÊ TEVE FEBRE?')
         sleep(2)
-        #sayfever()
+        sayfever()
         print('Após a contagem, responda a pergunta: VOCÊ TEVE DOR DE CABEÇA?')
         sleep(2)
         sayheadache()
