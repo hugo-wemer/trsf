@@ -59,7 +59,7 @@ def map_to_pred(batch):
     return batch
 
 # creates a dataset using the audio bellow
-reference_dict = {'client_id':['teste'], 'path':['name3.wav'], 'sentence':[''], 
+reference_dict = {'client_id':['teste'], 'path':['recording0.wav'], 'sentence':[''], 
                   'up_votes':['2'], 
                   'down_votes':[0], 'age': [23], 'gender': [''], 'accent': [''], 
                   'locale':['pt'], 'segment':["''"]}
