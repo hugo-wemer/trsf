@@ -107,7 +107,7 @@ def measurements():
             targetTemp = "{:.2f}".format(mlx.object_temperature)
             #print("Ambient Temperature:", ambientTemp, "°C")
             #print("Target Temperature:", targetTemp,"°C")
-            if (int(targetTemp) > int(30)):
+            if (float(targetTemp) > int(30)):
                 temperature = 35,5 + (targetTemp/100)*2
                 tempTrigger = False
             else:
