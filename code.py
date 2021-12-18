@@ -45,12 +45,12 @@ def sayname():
     count()
     print('DIGA O SEU NOME')
     recording = sd.rec(int(duration * freq), 
-                    samplerate=freq, channels=2)
+                    samplerate=freq, channels=1)
     sd.wait()
     write("name0.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    wv.write("name1.wav", recording, freq, sampwidth=2)
+    wv.write("name1.wav", recording, freq, sampwidth=1)
     os.replace("name0.wav", "rec/name0.wav")
     os.replace("name1.wav", "rec/name1.wav")
 
@@ -58,12 +58,12 @@ def sayfever():
     count()
     print('DIGA SE VOCÊ TEVE FEBRE? (SIM/NÃO)')
     recording = sd.rec(int(duration * freq), 
-                        samplerate=freq, channels=2)
+                        samplerate=freq, channels=1)
     sd.wait()
     write("fever0.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    wv.write("fever1.wav", recording, freq, sampwidth=2)
+    wv.write("fever1.wav", recording, freq, sampwidth=1)
     os.replace("fever0.wav", "rec/fever0.wav")
     os.replace("fever1.wav", "rec/fever1.wav")
 
@@ -71,12 +71,12 @@ def sayheadache():
     count()
     print('DIGA SE VOCÊ TEVE DORES DE CABEÇA? (SIM/NÃO)')
     recording = sd.rec(int(duration * freq), 
-                        samplerate=freq, channels=2)
+                        samplerate=freq, channels=1)
     sd.wait()
     write("headache0.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    wv.write("headache1.wav", recording, freq, sampwidth=2)
+    wv.write("headache1.wav", recording, freq, sampwidth=1)
     os.replace("headache0.wav", "rec/headache0.wav")
     os.replace("headache1.wav", "rec/headache1.wav")
 
@@ -84,12 +84,12 @@ def sayrednose():
     count()
     print('DIGA SE VOCÊ TEVE CORIZA? (SIM/NÃO)')
     recording = sd.rec(int(duration * freq), 
-                        samplerate=freq, channels=2)
+                        samplerate=freq, channels=1)
     sd.wait()
     write("rednose0.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    wv.write("rednose1.wav", recording, freq, sampwidth=2)
+    wv.write("rednose1.wav", recording, freq, sampwidth=1)
     os.replace("rednose0.wav", "rec/rednose0.wav")
     os.replace("rednose1.wav", "rec/rednose1.wav")
 
