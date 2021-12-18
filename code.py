@@ -192,7 +192,7 @@ print("Pressione o botão para iniciar")
 #        print('Temperatura = ',temperature, "°C")
 #        print('Batimentos = ',bpm, "bpm")
 #        print('Oxigenação = ',oxy, "%")
-if GPIO.input(bot) == 1:     
+if GPIO.input(bot) == 0:     
     print('Após a contagem, diga o seu nome')
     sleep(2)
     sayname()
