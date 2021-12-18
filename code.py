@@ -50,7 +50,7 @@ def sayname():
     write("name0.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    wv.write("name1.wav", recording, freq, sampwidth=2)
+    wv.write("name1.wav", recording, freq, sampwidth=1)
     os.replace("name0.wav", "rec/name0.wav")
     os.replace("name1.wav", "rec/name1.wav")
 
