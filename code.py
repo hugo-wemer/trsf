@@ -209,6 +209,6 @@ if GPIO.input(bot) == 0:
     sleep(2)
     measurements()
     print('Temperatura = ', temperature)
-    print('Batimentos = ', bpm)
-    print('Oxigenação = ', oxy)
+    #print('Batimentos = ', bpm)
+    #print('Oxigenação = ', oxy)
       
