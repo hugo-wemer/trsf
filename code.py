@@ -110,6 +110,7 @@ def measurements():
             #print("Ambient Temperature:", ambientTemp, "°C")
             #print("Target Temperature:", targetTemp,"°C")
             if (float(targetTemp) > int(30)):
+                global temperature
                 temperature = 35.5 + (float(targetTemp)/100)*2
                 tempTrigger = False
             else:
@@ -124,6 +125,7 @@ def measurements():
             if mx30.ir != mx30.buffer_ir :
                 #print("heart Rate:",hb);
                 if (int(hb) > int(75)):
+                    global bpm
                     bpm = int(hb)
                     bpmTrigger = False
                 else:
@@ -132,13 +134,13 @@ def measurements():
                 #print("Blood Oxygen:",spo2);
                 #print("-----------------------")
                 if (int(spo2) > int(80)):
+                    global oxy
                     oxy = 95 + ((int(spo2)/100) * 2)
                     oxyTrigger = False
                     mea = False
                 else:
                     oxyTrigger = True
-
-
+        
 import RPi.GPIO as GPIO
 import time
 from time import sleep
@@ -148,26 +150,65 @@ GPIO.setup (bot,GPIO.IN)
 print("Seja bem-vindo à triagem")
 print("Pressione o botão para iniciar")
 
-while(1):
-    if GPIO.input(bot) == 1:     
-        sleep(1)
-        if GPIO.input(bot) == 0:
-            print('Após a contagem, diga o seu nome')
-            sleep(2)
-            sayname()
-            print('Após a contagem, responda a pergunta: VOCÊ TEVE FEBRE?')
-            sleep(2)
-            sayfever()
-            print('Após a contagem, responda a pergunta: VOCÊ TEVE DOR DE CABEÇA?')
-            sleep(2)
-            sayheadache()
-            print('Após a contagem, responda a pergunta: VOCÊ TEVE CORIZA?')
-            sleep(2)
-            sayrednose()
-            print("Posicione os dedos indicadores nos dois sensores do totem.")
-            sleep(2)
-            measurements()
-            print('Temperatura = ',temperature, "°C")
-            print('Batimentos = ',bpm, "bpm")
-            print('Oxigenação = ',oxy, "%")
+#while(1):
+#    if GPIO.input(bot) == 1:     
+#        sleep(1)
+#        if GPIO.input(bot) == 0:
+#            print('Após a contagem, diga o seu nome')
+#            sleep(2)
+#            sayname()
+#            print('Após a contagem, responda a pergunta: VOCÊ TEVE FEBRE?')
+#            sleep(2)
+#            sayfever()
+#            print('Após a contagem, responda a pergunta: VOCÊ TEVE DOR DE CABEÇA?')
+#            sleep(2)
+#            sayheadache()
+#            print('Após a contagem, responda a pergunta: VOCÊ TEVE CORIZA?')
+#            sleep(2)
+#            sayrednose()
+#            print("Posicione os dedos indicadores nos dois sensores do totem.")
+#            sleep(2)
+#            measurements()
+#            print('Temperatura = ',temperature, "°C")
+#            print('Batimentos = ',bpm, "bpm")
+#            print('Oxigenação = ',oxy, "%")
+#while(1):
+#    if GPIO.input(bot) == 1:     
+#        print('Após a contagem, diga o seu nome')
+#        sleep(2)
+#        sayname()
+#        print('Após a contagem, responda a pergunta: VOCÊ TEVE FEBRE?')
+#        sleep(2)
+#        sayfever()
+#        print('Após a contagem, responda a pergunta: VOCÊ TEVE DOR DE CABEÇA?')
+#        sleep(2)
+#        sayheadache()
+#        print('Após a contagem, responda a pergunta: VOCÊ TEVE CORIZA?')
+#        sleep(2)
+#        sayrednose()
+#        print("Posicione os dedos indicadores nos dois sensores do totem.")
+#        sleep(2)
+#        measurements()
+#        print('Temperatura = ',temperature, "°C")
+#        print('Batimentos = ',bpm, "bpm")
+#        print('Oxigenação = ',oxy, "%")
+if GPIO.input(bot) == 1:     
+    print('Após a contagem, diga o seu nome')
+    sleep(2)
+    sayname()
+    print('Após a contagem, responda a pergunta: VOCÊ TEVE FEBRE?')
+    sleep(2)
+    sayfever()
+    print('Após a contagem, responda a pergunta: VOCÊ TEVE DOR DE CABEÇA?')
+    sleep(2)
+    sayheadache()
+    print('Após a contagem, responda a pergunta: VOCÊ TEVE CORIZA?')
+    sleep(2)
+    sayrednose()
+    print("Posicione os dedos indicadores nos dois sensores do totem.")
+    sleep(2)
+    measurements()
+    print('Temperatura = ',temperature, "°C")
+    print('Batimentos = ',bpm, "bpm")
+    print('Oxigenação = ',oxy, "%")
       
