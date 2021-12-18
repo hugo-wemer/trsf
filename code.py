@@ -38,14 +38,14 @@ def count():
 import sounddevice as sd
 from scipy.io.wavfile import write
 import wavio as wv
-freq = 48000
+freq = 44100
 duration = 5
 import os
 def sayname():
     count()
     print('DIGA O SEU NOME')
     recording = sd.rec(int(duration * freq), 
-                    samplerate=freq, channels=1)
+                    samplerate=freq, channels=2)
     sd.wait()
     write("name0.wav", freq, recording)
 
@@ -58,7 +58,7 @@ def sayfever():
     count()
     print('DIGA SE VOCÊ TEVE FEBRE? (SIM/NÃO)')
     recording = sd.rec(int(duration * freq), 
-                        samplerate=freq, channels=1)
+                        samplerate=freq, channels=2)
     sd.wait()
     write("fever0.wav", freq, recording)
 
@@ -71,7 +71,7 @@ def sayheadache():
     count()
     print('DIGA SE VOCÊ TEVE DORES DE CABEÇA? (SIM/NÃO)')
     recording = sd.rec(int(duration * freq), 
-                        samplerate=freq, channels=1)
+                        samplerate=freq, channels=2)
     sd.wait()
     write("headache0.wav", freq, recording)
 
@@ -84,7 +84,7 @@ def sayrednose():
     count()
     print('DIGA SE VOCÊ TEVE CORIZA? (SIM/NÃO)')
     recording = sd.rec(int(duration * freq), 
-                        samplerate=freq, channels=1)
+                        samplerate=freq, channels=2)
     sd.wait()
     write("rednose0.wav", freq, recording)
 
