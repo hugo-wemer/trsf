@@ -115,10 +115,9 @@ def measurements():
                 tempTrigger = False
             else:
                 tempTrigger = True
-        while(bpmTrigger & oxyTrigger):
+        while(bpmTrigger and oxyTrigger):
             mx30.read_sensor()
             mx30.ir, mx30.red
-
             hb = int(mx30.ir / 100)
             spo2 = int(mx30.red / 100)
             
