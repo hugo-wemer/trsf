@@ -59,7 +59,7 @@ def map_to_pred(batch):
     return batch
 
 # creates a dataset using the audio bellow
-reference_dict = {'client_id':['teste'], 'path':['rednose1.wav'], 'sentence':[''], 
+reference_dict = {'client_id':['teste'], 'path':['recording1.wav'], 'sentence':[''], 
                   'up_votes':['2'], 
                   'down_votes':[0], 'age': [23], 'gender': [''], 'accent': [''], 
                   'locale':['pt'], 'segment':["''"]}
@@ -68,7 +68,7 @@ from datasets import Dataset
 data = Dataset.from_dict(reference_dict)
 
 data = data.map(map_to_array)
-result = data.map(map_to_pred, batched=True, batch_size=32, remove_columns=list(data.features.keys()))
+result = data.map(map_to_pred, batched=True, batch_size=16, remove_columns=list(data.features.keys()))
 
 # name = result[0].replace()
 # print(result[0])
