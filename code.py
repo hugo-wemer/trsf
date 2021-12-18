@@ -47,10 +47,10 @@ def sayname():
     recording = sd.rec(int(duration * freq), 
                     samplerate=freq, channels=1)
     sd.wait()
-    write("/rec/name.wav", freq, recording)
+    write("name.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    wv.write("/rec/name.wav", recording, freq, sampwidth=2)
+    wv.write("name.wav", recording, freq, sampwidth=2)
 
 def sayfever():
     count()
@@ -212,3 +212,7 @@ if GPIO.input(bot) == 0:
     print('Oxigenação = ', oxy)
 
 import os    
+os.replace("name.wav", "rec/name.wav")
+os.replace("fever.wav", "rec/fever.wav")
+os.replace("headache.wav", "rec/headache.wav")
+os.replace("rednose.wav", "rec/rednose.wav")
