@@ -38,7 +38,7 @@ def count():
 import sounddevice as sd
 from scipy.io.wavfile import write
 import wavio as wv
-freq = 44100
+freq = 48000
 duration = 5
 import os
 def sayname():
@@ -50,7 +50,7 @@ def sayname():
     write("name0.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    wv.write("name1.wav", recording, freq, sampwidth=1)
+    wv.write("name1.wav", recording, freq, sampwidth=4)
     os.replace("name0.wav", "rec/name0.wav")
     os.replace("name1.wav", "rec/name1.wav")
 
@@ -63,7 +63,7 @@ def sayfever():
     write("fever0.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    wv.write("fever1.wav", recording, freq, sampwidth=1)
+    wv.write("fever1.wav", recording, freq, sampwidth=2)
     os.replace("fever0.wav", "rec/fever0.wav")
     os.replace("fever1.wav", "rec/fever1.wav")
 
@@ -76,7 +76,7 @@ def sayheadache():
     write("headache0.wav", freq, recording)
 
     # Convert the NumPy array to audio file
-    wv.write("headache1.wav", recording, freq, sampwidth=1)
+    wv.write("headache1.wav", recording, freq, sampwidth=2)
     os.replace("headache0.wav", "rec/headache0.wav")
     os.replace("headache1.wav", "rec/headache1.wav")
 
