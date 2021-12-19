@@ -128,7 +128,7 @@ print("Seja bem-vindo à triagem")
 print("Pressione o botão para iniciar")
 
 while(1):
-    if GPIO.input(bot) == 1:     
+    if GPIO.input(bot) == 0:     
         print('Após a contagem, diga o seu nome')
         sleep(5)
         sayname()
