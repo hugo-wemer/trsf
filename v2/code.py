@@ -199,3 +199,5 @@ while(1):
             x = requests.post(url, data=data, headers=headers)
             print(x)
 
+        sleep(5)
+
