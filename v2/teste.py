@@ -129,16 +129,16 @@ print("Pressione o botão para iniciar")
 
 while(1):
     if GPIO.input(bot) == 0:     
-        print('Após a contagem, diga o seu nome')
+        print('Após o loading, diga o seu nome')
         sleep(5)
         sayname()
-        print('Após a contagem, responda a pergunta: VOCÊ TEVE FEBRE?')
+        print('Após o loading, responda a pergunta: VOCÊ TEVE FEBRE?')
         sleep(5)
         sayfever()
-        print('Após a contagem, responda a pergunta: VOCÊ TEVE DOR DE CABEÇA?')
+        print('Após o loading, responda a pergunta: VOCÊ TEVE DOR DE CABEÇA?')
         sleep(5)
         sayheadache()
-        print('Após a contagem, responda a pergunta: VOCÊ TEVE CORIZA?')
+        print('Após o loading, responda a pergunta: VOCÊ TEVE CORIZA?')
         sleep(5)
         sayrednose()
         print("Posicione os dedos indicadores nos dois sensores do totem.")
@@ -165,4 +165,38 @@ while(1):
         sound = sound.set_channels(2)
         sound.export("/home/ubuntu/trsf/v2/rec/rednose0.wav", format="wav")
 
+    import requests
+
+    auth = True
+    post = True
+
+
+    if(auth):
+        url = "https://adonis-backend-tcc.herokuapp.com/auth"
+        data = {
+            "username": "master",
+            "password": "master"
+        }
+        x = requests.post(url, data=data)
+        response = x.json()
+        Token = response['token']
+        # print(Token)
+
+
+    if(post):
+        url = "https://adonis-backend-tcc.herokuapp.com/posts/"
+        data = {
+            "name": "Burlandoo o sistema",
+            "temperature": temperature,
+            "diagnostic": 1,
+            "blood_oxygen": oxy,
+            "heart_rate": bpm,
+            "fever": 0,
+            "headache": 1,
+            "runny_nose": 0
+            }
+        
+        headers = {"Authorization": "Bearer " + Token}
+        x = requests.post(url, data=data, headers=headers)
+        print(x)
 
