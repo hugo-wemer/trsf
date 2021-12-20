@@ -185,7 +185,7 @@ while(1):
         if(post):
             url = "https://adonis-backend-tcc.herokuapp.com/posts/"
             data = {
-                "name": "Burlandoo o sistema",
+                "name": "Felipe Silva",
                 "temperature": temperature,
                 "diagnostic": 1,
                 "blood_oxygen": oxy,
