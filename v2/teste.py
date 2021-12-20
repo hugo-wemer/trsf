@@ -165,38 +165,37 @@ while(1):
         sound = sound.set_channels(2)
         sound.export("/home/ubuntu/trsf/v2/rec/rednose0.wav", format="wav")
 
-    import requests
+        import requests
 
-    auth = True
-    post = True
+        auth = True
+        post = True
 
-
-    if(auth):
-        url = "https://adonis-backend-tcc.herokuapp.com/auth"
-        data = {
-            "username": "master",
-            "password": "master"
-        }
-        x = requests.post(url, data=data)
-        response = x.json()
-        Token = response['token']
-        # print(Token)
-
-
-    if(post):
-        url = "https://adonis-backend-tcc.herokuapp.com/posts/"
-        data = {
-            "name": "Burlandoo o sistema",
-            "temperature": temperature,
-            "diagnostic": 1,
-            "blood_oxygen": oxy,
-            "heart_rate": bpm,
-            "fever": 0,
-            "headache": 1,
-            "runny_nose": 0
+        if(auth):
+            url = "https://adonis-backend-tcc.herokuapp.com/auth"
+            data = {
+                "username": "master",
+                "password": "master"
             }
-        
-        headers = {"Authorization": "Bearer " + Token}
-        x = requests.post(url, data=data, headers=headers)
-        print(x)
+            x = requests.post(url, data=data)
+            response = x.json()
+            Token = response['token']
+            # print(Token)
+
+
+        if(post):
+            url = "https://adonis-backend-tcc.herokuapp.com/posts/"
+            data = {
+                "name": "Burlandoo o sistema",
+                "temperature": temperature,
+                "diagnostic": 1,
+                "blood_oxygen": oxy,
+                "heart_rate": bpm,
+                "fever": 0,
+                "headache": 1,
+                "runny_nose": 0
+                }
+            
+            headers = {"Authorization": "Bearer " + Token}
+            x = requests.post(url, data=data, headers=headers)
+            print(x)
 
